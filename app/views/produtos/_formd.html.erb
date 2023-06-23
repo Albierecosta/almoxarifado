@@ -1,0 +1,49 @@
+<%= form_with(model: produto, class: "form") do |form| %>
+  <% if produto.errors.any? %>
+    <div class="alert alert-danger">
+      <h2><%= pluralize(produto.errors.count, "error") %> prohibited this produto from being saved:</h2>
+
+      <ul>
+        <% produto.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <%= form.label :nome, style: "display: block", class: "form-label" %>
+        <%= form.text_field :nome, class: "form-control", disabled: true  %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :estoque, style: "display: block", class: "form-label" %>
+        <%= form.number_field :estoque, class: "form-control", disabled: true %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :medida, style: "display: block", class: "form-label" %>
+        <%= form.text_field :medida, class: "form-control", disabled: true %>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="form-group">
+        <%= form.label :Data_entrada, style: "display: block", class: "form-label" %>
+        <%= form.date_field :dt_entrada, class: "form-control", disabled: true %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :Data_validade, style: "display: block", class: "form-label" %>
+        <%= form.date_field :dt_validade, class: "form-control", disabled: true %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :descricao, style: "display: block", class: "form-label" %>
+        <%= form.text_area :descricao, class: "form-control", disabled: true %>
+      </div>
+    </div>
+  </div>
+<% end %>

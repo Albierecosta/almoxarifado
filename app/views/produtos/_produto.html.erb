@@ -1,0 +1,27 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Descrição</th>
+      <th scope="col">Estoque</th>
+      <th scope="col">Medida</th>
+      <th scope="col">Data entrada</th>
+      <th scope="col">Data validade</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"><%= link_to produto.id, edit_produto_path(produto) %></th>
+      <td><%= produto.nome %></td>
+      <td><%= produto.descricao %></td>
+      <td><%= produto.estoque %></td>
+      <td><%= produto.medida %></td>
+      <td><%= produto.dt_entrada %></td>
+      <td><%= produto.dt_validade %></td>
+      <td><%= button_to "🗑️", produto, method: :delete %></td>
+      <td><%= button_to "Visualizar", produto, class: "btn btn-primary" %></td>
+    </tr>
+  </tbody>
+</table>

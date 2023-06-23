@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome: MyString
+  descricao: MyText
+  estoque: 1
+  medida: MyString
+  dt_entrada: 2023-06-22
+  dt_validade: 2023-06-22
+
+two:
+  nome: MyString
+  descricao: MyText
+  estoque: 1
+  medida: MyString
+  dt_entrada: 2023-06-22
+  dt_validade: 2023-06-22

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Almoxarifado</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  </head>
+
+  <body>
+    <%= render "layouts/navbar"  %>
+    <%= yield %>
+
+    <dialog id="turbo-confirm">
+        <form method="dialog">
+            <p>Tem certeza?</p>
+          <div>
+            <button value="cancel">Cancelar</button>
+            <button value="confirm">confirmar</button>
+          </div>
+        </form>
+    </dialog>
+    
+    </body>
+</html>

@@ -1,0 +1,38 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Produtos</h1>
+<%= link_to "Novo produto", new_produto_path, class: "btn btn-primary" %>
+
+<div id="produtos">
+  
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Descrição</th>
+      <th scope="col">Estoque</th>
+      <th scope="col">Medida</th>
+      <th scope="col">Data entrada</th>
+      <th scope="col">Data validade</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @produtos.each do |produto| %>
+    <tr>
+      <th scope="row"><%= link_to produto.id, edit_produto_path(produto) %></th>
+      <td><%= produto.nome %></td>
+      <td><%= produto.descricao %></td>
+      <td><%= produto.estoque %></td>
+      <td><%= produto.medida %></td>
+      <td><%= produto.dt_entrada %></td>
+      <td><%= produto.dt_validade %></td>
+      <td><%= button_to "🗑️", produto, method: :delete, class: "btn btn-outline-secondary" %></td>
+      <td><%= link_to "🔍", produto, class: "btn btn-outline-secondary" %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
